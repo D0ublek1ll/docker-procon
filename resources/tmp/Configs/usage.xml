@@ -3,12 +3,12 @@
     <version>1.5.1.1</version>
     <language>au.loc</language>
     <accounts>1</accounts>
-    <uptime>20.1482463</uptime>
+    <uptime>20.626204</uptime>
   </general>
   <environment>
     <platform>desktop</platform>
-    <framework_name>.NET</framework_name>
-    <max_framework_version>4.0.0.0</max_framework_version>
+    <framework_name>Mono.Runtime</framework_name>
+    <max_framework_version>4.2.1</max_framework_version>
   </environment>
   <connections>
     <connection>
