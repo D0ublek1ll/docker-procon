@@ -23,8 +23,8 @@ RUN mkdir /procon \
 
 COPY resources/ /
 
-RUN chmod +x /tmp/generate.sh && /tmp/generate.sh && rm -Rf /tmp/*
+RUN chmod +x /tmp/tmpl.sh && chmod +x /tmp/run.sh
 
 VOLUME /procon
 
-CMD [ "mono", "/procon/PRoCon.Console.exe" ]
+CMD [ "/tmp/run.sh" ]
