@@ -2,8 +2,6 @@ FROM mono:latest
 
 # ProCon 1.5.1.1
 
-ENV PC_USERNAME admin
-ENV PC_PASSWORD admin1
 ENV PC_PORT 27260
 ENV PC_SERVER_NAME localhost
 ENV PC_SERVER_TYPE BF4
@@ -23,7 +21,7 @@ RUN mkdir /procon \
 
 COPY resources/ /
 
-RUN chmod +x /tmp/tmpl.sh && chmod +x /tmp/run.sh
+RUN chmod +x /tmp/tmpl.sh && chmod +x /tmp/run.sh && rm -f /procon/Config/accounts.cfg && cp /tmp/Configs/accounts.cfg /procon/Configs/
 
 VOLUME /procon
 
