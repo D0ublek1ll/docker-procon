@@ -10,11 +10,8 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
-RUN cd /home/container
 
-COPY resources/ /home/container/
-
-VOLUME /home/container/
+VOLUME /home/container
 
 COPY /entrypoint.sh ./entrypoint.sh
-CMD ["/bin/bash", "./entrypoint.sh"]
+CMD ["/bin/bash", "/entrypoint.sh"]
