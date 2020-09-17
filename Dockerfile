@@ -6,11 +6,11 @@ RUN apt-get update \
   && apt-get install -y unzip \
   && rm -rf /var/lib/apt/lists/*
 
-#RUN mkdir /procon \
-#  && cd /procon \
-#  && curl https://ae51.uk/download/procon/v1.5.3.4.zip -O \
-#  && unzip procon_1.5.3.4.zip \
-#  && rm -f procon_1.5.3.4.zip
+RUN mkdir /procon \
+  && cd /procon \
+  && curl https://ae51.uk/download/procon/v1.5.3.4.zip -O \
+  && unzip procon_1.5.3.4.zip \
+  && rm -f procon_1.5.3.4.zip
 
 COPY resources/ /
 
