@@ -3,8 +3,7 @@ FROM mono:latest
 MAINTAINER Mick de Jong, <ik@mickdejong.nl>
 
 RUN apt-get update
-RUN apt-get install curl ca-certificates openssl git tar bash sqlite fontconfig unzip \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get install curl ca-certificates openssl git tar bash sqlite fontconfig unzip
 RUN adduser -D -h /home/container container
 
 USER container
