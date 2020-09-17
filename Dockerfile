@@ -22,7 +22,7 @@ COPY resources/ /home/container/
 
 RUN rm -f procon/Config/accounts.cfg && cp tmp/Configs/accounts.cfg procon/Configs/
 
-VOLUME /home/container/procon
+VOLUME /home/container/
 
 ENV PC_PORT 27260
 ENV PC_SERVER_NAME localhost
@@ -32,4 +32,4 @@ ENV PC_SERVER_PORT 1234
 ENV PC_SERVER_PASSWORD 1234
 
 COPY ./entrypoint.sh entrypoint.sh
-CMD ["/bin/bash", "/entrypoint.sh"]
+CMD ["/bin/bash", "entrypoint.sh"]
