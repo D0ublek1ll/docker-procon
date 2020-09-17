@@ -9,8 +9,8 @@ RUN adduser --disabled-password --home /home/container container
 USER container
 ENV  USER=container HOME=/home/container
 
-RUN cd /home/container
 WORKDIR /home/container
+RUN cd /home/container
 
 # ProCon 1.5.1.1
 RUN mkdir procon \
@@ -32,5 +32,5 @@ ENV PC_SERVER_IP 127.0.0.1
 ENV PC_SERVER_PORT 1234
 ENV PC_SERVER_PASSWORD 1234
 
-COPY ./entrypoint.sh entrypoint.sh
-CMD ["/bin/bash", "entrypoint.sh"]
+COPY ./entrypoint.sh /entrypoint.sh
+CMD ["/bin/bash", "./entrypoint.sh"]
