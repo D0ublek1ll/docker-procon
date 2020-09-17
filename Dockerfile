@@ -20,7 +20,7 @@ RUN mkdir procon \
 
 COPY resources/ /home/container/
 
-RUN chmod +x tmp/tmpl.sh && chmod +x tmp/run.sh && rm -f procon/Config/accounts.cfg && cp tmp/Configs/accounts.cfg procon/Configs/
+RUN rm -f procon/Config/accounts.cfg && cp tmp/Configs/accounts.cfg procon/Configs/
 
 VOLUME /home/container/procon
 
