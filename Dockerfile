@@ -9,6 +9,7 @@ RUN adduser --disabled-password --home /home/container container
 USER container
 ENV  USER=container HOME=/home/container
 
+RUN cd /home/container
 WORKDIR /home/container
 
 # ProCon 1.5.1.1
