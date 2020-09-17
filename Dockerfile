@@ -14,8 +14,6 @@ RUN cd /home/container
 
 COPY resources/ /home/container/
 
-RUN rm -f procon/Config/accounts.cfg && cp tmp/Configs/accounts.cfg procon/Configs/
-
 VOLUME /home/container/
 
 COPY /entrypoint.sh ./entrypoint.sh
