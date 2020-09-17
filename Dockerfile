@@ -2,8 +2,10 @@ FROM mono:latest
 
 MAINTAINER Mick de Jong, <ik@mickdejong.nl>
 
-RUN apt install curl ca-certificates openssl git tar bash sqlite fontconfig \
-    && adduser -D -h /home/container container
+RUN apt-get update
+RUN apt-get install curl ca-certificates openssl git tar bash sqlite fontconfig unzip \
+    && rm -rf /var/lib/apt/lists/*
+RUN adduser -D -h /home/container container
 
 USER container
 ENV  USER=container HOME=/home/container
@@ -11,10 +13,6 @@ ENV  USER=container HOME=/home/container
 WORKDIR /home/container
 
 # ProCon 1.5.1.1
-RUN apt-get update \
-  && apt-get install -y unzip \
-  && rm -rf /var/lib/apt/lists/*
-
 RUN mkdir /procon \
   && cd /procon \
   && curl https://ae51.uk/download/procon/v1.5.3.4.zip -O \
