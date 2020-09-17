@@ -20,7 +20,7 @@ RUN mkdir procon \
 
 COPY resources/ /home/container/
 
-RUN chmod +x /tmp/tmpl.sh && chmod +x /tmp/run.sh && rm -f /procon/Config/accounts.cfg && cp /tmp/Configs/accounts.cfg /procon/Configs/
+RUN chmod +x tmp/tmpl.sh && chmod +x tmp/run.sh && rm -f procon/Config/accounts.cfg && cp tmp/Configs/accounts.cfg procon/Configs/
 
 VOLUME /home/container/procon
 
@@ -31,5 +31,5 @@ ENV PC_SERVER_IP 127.0.0.1
 ENV PC_SERVER_PORT 1234
 ENV PC_SERVER_PASSWORD 1234
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./entrypoint.sh entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
