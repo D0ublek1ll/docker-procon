@@ -1,10 +1,10 @@
-# rungeict/procon
+# D0ublek1ll/docker-procon
 Dockerfile for procon
 
 ## Introduction
 Procon is a remote managment tool built in .NET for Battlefield Servers - BC2, BF3 & BF4
 
-https://forum.myrcon.com/showthread.php?5813-Download-Procon-1-X
+https://myrcon.net/topic/2-procon-1x/
 
 ## Deployment
 
