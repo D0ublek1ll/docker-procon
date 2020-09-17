@@ -12,17 +12,17 @@ ENV  USER=container HOME=/home/container
 WORKDIR /home/container
 
 # ProCon 1.5.1.1
-RUN mkdir /procon \
-  && cd /procon \
+RUN mkdir procon \
+  && cd procon \
   && curl https://ae51.uk/download/procon/v1.5.3.4.zip -O \
   && unzip v1.5.3.4.zip \
   && rm -f v1.5.3.4.zip
 
-COPY resources/ /
+COPY resources/ /home/container/
 
 RUN chmod +x /tmp/tmpl.sh && chmod +x /tmp/run.sh && rm -f /procon/Config/accounts.cfg && cp /tmp/Configs/accounts.cfg /procon/Configs/
 
-VOLUME /procon
+VOLUME /home/container/procon
 
 ENV PC_PORT 27260
 ENV PC_SERVER_NAME localhost
