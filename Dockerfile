@@ -1,7 +1,16 @@
 FROM mono:latest
 
-# ProCon 1.5.1.1
+MAINTAINER Mick de Jong, <ik@mickdejong.nl>
 
+RUN apt install curl ca-certificates openssl git tar bash sqlite fontconfig \
+    && adduser -D -h /home/container container
+
+USER container
+ENV  USER=container HOME=/home/container
+
+WORKDIR /home/container
+
+# ProCon 1.5.1.1
 RUN apt-get update \
   && apt-get install -y unzip \
   && rm -rf /var/lib/apt/lists/*
@@ -25,4 +34,5 @@ ENV PC_SERVER_IP 127.0.0.1
 ENV PC_SERVER_PORT 1234
 ENV PC_SERVER_PASSWORD 1234
 
-CMD [ "/tmp/run.sh" ]
+COPY ./entrypoint.sh /entrypoint.sh
+CMD ["/bin/bash", "/entrypoint.sh"]
