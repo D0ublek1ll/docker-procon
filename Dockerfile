@@ -9,8 +9,8 @@ RUN apt-get update \
 RUN mkdir /procon \
   && cd /procon \
   && curl https://ae51.uk/download/procon/v1.5.3.4.zip -O \
-  && unzip procon_1.5.3.4.zip \
-  && rm -f procon_1.5.3.4.zip
+  && unzip v1.5.3.4.zip \
+  && rm -f v1.5.3.4.zip
 
 COPY resources/ /
 
