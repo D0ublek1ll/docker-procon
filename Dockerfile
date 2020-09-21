@@ -14,6 +14,4 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 
-VOLUME /home/container
-
 CMD ["/bin/bash", "/entrypoint.sh"]
