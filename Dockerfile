@@ -5,7 +5,7 @@ MAINTAINER Mick de Jong, <ik@mickdejong.nl>
 RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
     apk add --no-cache --virtual=.build-dependencies ca-certificates && \
     cert-sync /etc/ssl/certs/ca-certificates.crt && \
-    apk del .build-dependencies
+    apk del .build-dependencies && \
     apk add --no-cache unzip tar bash openssl sqlite curl && \
     adduser --disabled-password --home /home/container container
     
