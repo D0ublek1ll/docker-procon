@@ -1,12 +1,14 @@
-FROM mono:latest
+FROM alpine:latest
 
 MAINTAINER Mick de Jong, <ik@mickdejong.nl>
 
-RUN apt-get update
-RUN apt-get install -y curl ca-certificates openssl tar bash sqlite unzip iputils-ping
-RUN chmod 4755 /bin/ping
-RUN adduser --disabled-password --home /home/container container
-
+RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
+    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
+    cert-sync /etc/ssl/certs/ca-certificates.crt && \
+    apk del .build-dependencies
+    apk add --no-cache unzip tar bash openssl sqlite curl && \
+    adduser --disabled-password --home /home/container container
+    
 USER container
 ENV  USER=container HOME=/home/container
 
