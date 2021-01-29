@@ -14,7 +14,7 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-RUN curl https://ae51staff.uk/API/admins/ProconRulez.php --output /home/container/Plugins/BF4/proconrulz_admins_nuke.txt
+RUN curl https://ae51staff.uk/API/admins/ProconRulez.php --output /Plugins/BF4/proconrulz_admins_nuke.txt
 
 COPY ./entrypoint.sh /entrypoint.sh
 
